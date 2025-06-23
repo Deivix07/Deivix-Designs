@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Diseño - Deivix Tees</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body tabindex="0">
+
+  <!-- Navbar -->
+  <nav
+    id="navbar"
+    class="navbar navbar-expand-lg fixed-top"
+    aria-label="Main navigation"
+  >
+    <div class="container">
+      <a class="navbar-brand" href="index.html">👕 Deivix Tees</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navContent"
+        aria-controls="navContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="detalle-diseño" data-aos="fade-up" aria-live="polite" tabindex="0" role="main" class="container">
+    <!-- Contenido cargado con JS -->
+  </main>
+
+  <footer>
+    <p>© 2025 Deivix Tees. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const diseños = [
+      {
+        id: 1,
+        nombre: "Diseño Gratis #1",
+        imagen: "img/diseño1.png",
+        tipo: "gratis",
+        archivo: "descargas/diseño1.zip",
+      },
+      {
+        id: 2,
+        nombre: "Diseño Premium #1",
+        imagen: "img/diseño2.png",
+        tipo: "paga",
+        precio: 15,
+        whatsapp: "593987654321",
+      },
+      {
+        id: 3,
+        nombre: "Diseño Gratis #2",
+        imagen: "img/diseño3.png",
+        tipo: "gratis",
+        archivo: "descargas/diseño3.zip",
+      },
+      {
+        id: 4,
+        nombre: "Diseño Premium #2",
+        imagen: "img/diseño4.png",
+        tipo: "paga",
+        precio: 20,
+        whatsapp: "593987654321",
+      },
+    ];
+
+    function getIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("id");
+    }
+
+    function mostrarDetalle() {
+      const id = parseInt(getIdFromUrl());
+      const contenedor = document.getElementById("detalle-diseño");
+
+      if (!id) {
+        contenedor.innerHTML = `<p class="text-danger fs-4">¡No se encontró el diseño! <a href="index.html">Volver al catálogo</a></p>`;
+        return;
+      }
+
+      const diseño = diseños.find((d) => d.id === id);
+      if (!diseño) {
+        contenedor.innerHTML = `<p class="text-danger fs-4">Diseño no encontrado. <a href="index.html">Volver al catálogo</a></p>`;
+        return;
+      }
+
+      let contenido = `
+        <h2>${diseño.nombre}</h2>
+        <img src="${diseño.imagen}" alt="${diseño.nombre}" />
+      `;
+
+      if (diseño.tipo === "gratis") {
+        contenido += `
+          <p>Este diseño es <strong style="color:#ff7f50;">GRATIS</strong>. ¡Descárgalo ahora!</p>
+          <a href="${diseño.archivo}" download class="btn btn-success btn-lg" aria-label="Descargar ${diseño.nombre}">
+            Descargar
+          </a>
+        `;
+      } else {
+        contenido += `
+          <p>Precio: <strong style="color:#fdaa0f;">${diseño.precio} USD</strong></p>
+          <a href="https://wa.me/${diseño.whatsapp}?text=Hola,%20quiero%20comprar%20el%20diseño%20${encodeURIComponent(
+            diseño.nombre
+          )}" target="_blank" class="btn btn-warning btn-lg" aria-label="Comprar ${diseño.nombre} por WhatsApp">
+            Comprar por WhatsApp
+          </a>
+        `;
+      }
+
+      contenido += `<p><a href="index.html" class="btn btn-outline-light" aria-label="Volver al catálogo">Volver al Catálogo</a></p>`;
+
+      contenedor.innerHTML = contenido;
+    }
+
+    mostrarDetalle();
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Camisetas - Deivix Tees</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body tabindex="0">
+
+  <!-- Navbar -->
+  <nav
+    id="navbar"
+    class="navbar navbar-expand-lg fixed-top"
+    aria-label="Main navigation"
+  >
+    <div class="container">
+      <a class="navbar-brand" href="#">Deivix Designs</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navContent"
+        aria-controls="navContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portada -->
+  <header>
+    <h1>Catálogo de Diseños de Camisetas</h1>
+    <p>Explora nuestros diseños exclusivos: gratuitos y premium</p>
+  </header>
+
+  <!-- Catálogo -->
+  <section id="catalogo" class="container">
+    <h2>🎨 Nuestros Diseños</h2>
+    <div id="catalogo-lista" class="grid" data-aos="fade-up">
+      <!-- Las tarjetas se cargan con JS -->
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="container" data-aos="fade-up">
+    <h2>📩 Contáctanos</h2>
+    <form class="row g-3" novalidate>
+      <div class="col-md-6">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nombre"
+          required
+          aria-label="Nombre"
+        />
+      </div>
+      <div class="col-md-6">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Correo electrónico"
+          required
+          aria-label="Correo electrónico"
+        />
+      </div>
+      <div class="col-12">
+        <textarea
+          class="form-control"
+          rows="4"
+          placeholder="Mensaje"
+          required
+          aria-label="Mensaje"
+        ></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-outline-light btn-lg">
+          Enviar mensaje
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Deivix Tees. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const diseños = [
+      {
+        id: 1,
+        nombre: "Diseño Gratis #1",
+        imagen: "img/diseño1.png",
+        tipo: "gratis",
+        archivo: "descargas/diseño1.zip",
+      },
+      {
+        id: 2,
+        nombre: "Diseño Premium #1",
+        imagen: "img/diseño2.png",
+        tipo: "paga",
+        precio: 15,
+        whatsapp: "593987654321",
+      },
+      {
+        id: 3,
+        nombre: "Diseño Gratis #2",
+        imagen: "img/diseño3.png",
+        tipo: "gratis",
+        archivo: "descargas/diseño3.zip",
+      },
+      {
+        id: 4,
+        nombre: "Diseño Premium #2",
+        imagen: "img/diseño4.png",
+        tipo: "paga",
+        precio: 20,
+        whatsapp: "593987654321",
+      },
+    ];
+
+    function mostrarCatalogo() {
+    const contenedor = document.getElementById("catalogo-lista");
+    diseños.forEach((diseño, i) => {
+        const card = document.createElement("a"); // usamos <a> como tarjeta clickeable
+        card.href = `detalle.html?id=${diseño.id}`;
+        card.className = "card text-decoration-none";
+        card.setAttribute("data-aos", "zoom-in");
+        if (i > 0) card.setAttribute("data-aos-delay", i * 100);
+        card.setAttribute("tabindex", "0");
+
+        card.innerHTML = `
+        <img src="${diseño.imagen}" alt="${diseño.nombre}" />
+        <h3 class="card-title">${diseño.nombre}</h3>
+        `;
+
+        contenedor.appendChild(card);
+    });
+    }
+
+
+    mostrarCatalogo();
+  </script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+/* estilos.css - versión clara con #ffa600 y azul suave */
+
+body {
+  background: #fffaf0; /* fondo muy claro amarillo */
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding-top: 70px; /* navbar fijo */
+}
+
+/* Navbar: blanco translúcido con sombra cálida */
+nav.navbar {
+  background: #ffffffcc;
+  backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: 0 2px 10px rgba(255, 166, 0, 0.15);
+  border-bottom: 1px solid #ffc44d; /* naranja claro */
+}
+
+/* Navbar brand */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ffa600; /* naranja vivo */
+  letter-spacing: 1.5px;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  color: #275a8a; /* azul marino suave */
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-left: 15px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #ffa600;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffa600;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Header sección (portada) */
+header {
+  text-align: center;
+  padding: 100px 20px 60px 20px;
+  border-bottom: 1px solid #ffc44d;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #ffa600;
+  text-shadow: 0 0 8px #ffc44daa;
+}
+
+header p {
+  font-size: 1.4rem;
+  color: #5a5a5a;
+}
+
+/* Sección catálogo */
+#catalogo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#catalogo h2 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+  color: #ffa600;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px #ffc44daa;
+}
+
+/* Grid para tarjetas */
+#catalogo-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Tarjetas claras y suaves */
+.card {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 166, 0, 0.3);
+}
+
+
+/* Imagen diseño */
+.card img {
+  border-radius: 10px;
+  max-height: 220px;
+  object-fit: contain;
+  margin-bottom: 1px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(255, 166, 0, 0.3);
+  padding: 5px;
+}
+
+/* Título diseño */
+.card-title {
+  color: #ffa600;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Botón principal */
+.btn-outline-light {
+  position: relative;
+  color: #ffa600;
+  border: 2px solid #ffa600;
+  padding: 10px 28px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  background: transparent;
+  border-radius: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-outline-light::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130%;
+  height: 130%;
+  background: #ffa600;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0.3;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn-outline-light:hover {
+  color: #fff;
+  background-color: #ffa600;
+}
+
+.btn-outline-light:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Botón verde para descarga */
+.btn-success {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+  font-weight: 700;
+  color: white;
+  border-radius: 30px;
+  padding: 12px 36px;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-success:hover {
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.8);
+  color: white;
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+/* Botón naranja para WhatsApp */
+.btn-warning {
+  background-color: #1fab06;
+  border-color: #28890b;
+  font-weight: 700;
+  color: white;
+  border-radius: 30px;
+  padding: 12px 36px;
+  box-shadow: 0 0 10px rgba(22, 110, 3, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-warning:hover {
+  box-shadow: 0 0 25px rgb(30, 165, 17);
+  color: white;
+  background-color: #22930c;
+  border-color: #077d24;
+}
+
+/* Sección contacto */
+#contacto {
+  max-width: 700px;
+  margin: 80px auto 60px auto;
+  padding: 0 20px;
+}
+
+#contacto h2 {
+  color: #ffa600;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Formularios claros */
+input.form-control,
+textarea.form-control {
+  background-color: #fff9f5;
+  border: 2px solid #ffc44d;
+  border-radius: 10px;
+  color: #333;
+  font-size: 1.1rem;
+  padding: 12px 18px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+  border-color: #ffa600;
+  outline: none;
+  box-shadow: 0 0 8px #ffa600aa;
+  background-color: #fff7f0;
+  color: #222;
+}
+
+/* Botón enviar formulario */
+#contacto button.btn-outline-light {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 10px;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #ffc44d;
+  background: #fffaf0;
+}
+
+/* Texto detalle */
+#detalle-diseño {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#detalle-diseño h2 {
+  color: #ffa600;
+  font-weight: 900;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 0 6px #ffc44daa;
+}
+
+#detalle-diseño img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 166, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+/* Botones detalle */
+#detalle-diseño .btn-success,
+#detalle-diseño .btn-warning {
+  width: 100%;
+  padding: 15px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  border-radius: 40px;
+  box-shadow: 0 0 12px rgba(255, 166, 0, 0.7);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#detalle-diseño .btn-success:hover,
+#detalle-diseño .btn-warning:hover {
+  box-shadow: 0 0 25px rgba(255, 166, 0, 1);
+  color: #fff !important;
+}
+
+/* Link volver */
+#detalle-diseño a.btn-outline-light {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+#detalle-diseño a.btn-outline-light:hover {
+  background-color: #ffa600;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Scroll smooth para links */
+html {
+  scroll-behavior: smooth;
+}
