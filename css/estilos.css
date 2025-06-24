@@ -77,7 +77,7 @@ header p {
 
 /* Sección catálogo */
 #catalogo {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -95,7 +95,7 @@ header p {
 /* Grid para tarjetas */
 #catalogo-lista {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -116,7 +116,7 @@ header p {
 /* Imagen diseño */
 .card img {
   border-radius: 10px;
-  max-height: 220px;
+  max-height: 400px;
   object-fit: contain;
   margin-bottom: 1px;
   width: 100%;
@@ -128,7 +128,7 @@ header p {
 .card-title {
   color: #ffa600;
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: 12px;
   text-align: center;
   letter-spacing: 0.5px;
@@ -334,4 +334,17 @@ footer {
 /* Scroll smooth para links */
 html {
   scroll-behavior: smooth;
+}
+
+/* Para pantallas más pequeñas, cambiar a 1 o 2 tarjetas */
+@media (max-width: 1024px) {
+  #catalogo-lista {
+    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  #catalogo-lista {
+    grid-template-columns: 1fr; /* 1 tarjeta en pantallas pequeñas */
+  }
 }
