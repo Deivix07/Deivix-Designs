@@ -361,6 +361,25 @@ html {
   background-color: #20ba5a;
 }
 
+.footer {
+  background-color: #fbfbfb;
+  color: #656565;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-logo {
+  height: 55px;
+}
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
 /* Para pantallas más pequeñas, cambiar a 1 o 2 tarjetas */
 @media (max-width: 1024px) {
   #catalogo-lista {
@@ -371,5 +390,12 @@ html {
 @media (max-width: 768px) {
   #catalogo-lista {
     grid-template-columns: 1fr; /* 1 tarjeta en pantallas pequeñas */
+  }
+  .footer {
+    flex-direction: column; /* apilar verticalmente */
+    text-align: center;
+  }
+  .footer-logo {
+    margin-bottom: 8px; /* espacio debajo del logo */
   }
 }
