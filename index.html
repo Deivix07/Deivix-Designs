@@ -10,6 +10,7 @@
   />
   <link rel="stylesheet" href="css/estilos.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body tabindex="0">
 
@@ -20,7 +21,9 @@
     aria-label="Main navigation"
   >
     <div class="container">
-      <a class="navbar-brand" href="#">Deivix Designs</a>
+      <a class="navbar-brand" href="/">
+        <img src="img/logosting1_2.png" alt="Deivix Designs" height="50">
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -35,7 +38,6 @@
       <div class="collapse navbar-collapse justify-content-end" id="navContent">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" href="#catalogo">Catálogo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
@@ -43,6 +45,7 @@
 
   <!-- Portada -->
   <header>
+    <img src="img/logosting.png" alt="Deivix Designs" height="200">
     <h1>Catálogo de Diseños de Camisetas</h1>
     <p>Explora nuestros diseños exclusivos: gratuitos y premium</p>
   </header>
@@ -68,33 +71,77 @@
     const diseños = [
       {
         id: 1,
-        nombre: "Ball Fire Design",
+        nombre: "BALL FIRE DESIGN",
         imagen: "img/diseño1.png",
         tipo: "gratis",
         archivo: "descargas/ballfire.zip",
       },
       {
         id: 2,
-        nombre: "Diseño Premium #1",
-        imagen: "img/diseño1.png",
+        nombre: "SPLASH SPORT DESIGN",
+        imagen: "img/diseño2.png",
         tipo: "paga",
-        precio: 15,
-        whatsapp: "593987654321",
+        precio: 4.99,
+        whatsapp: "593968917554",
       },
       {
         id: 3,
-        nombre: "Diseño Gratis #2",
-        imagen: "img/diseño1.png",
+        nombre: "MIAMI CONCEPT DESIGN",
+        imagen: "img/diseño3.png",
         tipo: "gratis",
-        archivo: "descargas/diseño3.zip",
+        archivo: "descargas/miamiconcept.zip",
       },
       {
         id: 4,
-        nombre: "Diseño Premium #2",
-        imagen: "img/diseño1.png",
+        nombre: "SPORT 001 DESIGN",
+        imagen: "img/diseño4.png",
+        tipo: "gratis",
+        archivo: "descargas/sport001.zip",
+      },
+      {
+        id: 5,
+        nombre: "MILAN BLACK DESIGN",
+        imagen: "img/diseño5.png",
+        tipo: "gratis",
+        archivo: "descargas/milanblack.zip",
+      },
+      {
+        id: 6,
+        nombre: "SPORT 002 DESIGN",
+        imagen: "img/diseño6.png",
+        tipo: "gratis",
+        archivo: "descargas/sport002.zip",
+      },
+      {
+        id: 7,
+        nombre: "MILAN 98 DESIGN",
+        imagen: "img/diseño7.png",
         tipo: "paga",
-        precio: 20,
-        whatsapp: "593987654321",
+        precio: 4.99,
+        whatsapp: "593968917554",
+      },
+      {
+        id: 8,
+        nombre: "TIGRE GRUNGE DESIGN",
+        imagen: "img/diseño8.png",
+        tipo: "gratis",
+        archivo: "descargas/tigregrunge.zip",
+      },
+      {
+        id: 9,
+        nombre: "MOUNTAIN 01 DESIGN",
+        imagen: "img/diseño9.png",
+        tipo: "paga",
+        precio: 4.99,
+        whatsapp: "593968917554",
+      },
+      {
+        id: 10,
+        nombre: "WOLF ALLIGATOR DESIGN",
+        imagen: "img/diseño10.png",
+        tipo: "paga",
+        precio: 4.99,
+        whatsapp: "593968917554",
       },
     ];
 
@@ -120,5 +167,11 @@
 
     mostrarCatalogo();
   </script>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/593968917554" class="whatsapp-button" target="_blank" title="Escríbenos por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
 </body>
 </html>

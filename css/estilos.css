@@ -58,7 +58,7 @@ nav.navbar {
 /* Header sección (portada) */
 header {
   text-align: center;
-  padding: 100px 20px 60px 20px;
+  padding: 20px;
   border-bottom: 1px solid #ffc44d;
 }
 
@@ -334,6 +334,31 @@ footer {
 /* Scroll smooth para links */
 html {
   scroll-behavior: smooth;
+}
+
+/* Botón flotante de WhatsApp (círculo perfecto) */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 35px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  background-color: #20ba5a;
 }
 
 /* Para pantallas más pequeñas, cambiar a 1 o 2 tarjetas */
